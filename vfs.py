@@ -2,16 +2,16 @@ import os
 
 drive = "./vfs"
 
-def safe_path(path):
+def vfs_safe_path(path):
     abs_path = os.path.realpath(os.path.join(drive, path))
     if not abs_path.startswith(os.path.realpath(drive)):
         raise ValueError(f"Illegal path -> {path}")
     return abs_path
-def get_path(path):
+def vfs_get_path(path):
     os.makedirs("vfs", exist_ok=True)
-    
+
     path = path.replace("vfs:", "")
-    safe_p = safe_path(path)
+    safe_p = vfs_safe_path(path)
 
     if not os.path.exists(safe_p):
         raise FileNotFoundError(f"Could not find file -> {path}")
@@ -26,3 +26,10 @@ def get_path(path):
         entries.append({"name":entry,"type":file_type})
     return entries
 
+def vfs_remove_path(path):
+    safe = vfs_safe_path(path)
+
+    if not os.path.exists(safe):
+        raise FileNotFoundError(f"Could not find file -> {path}")
+    
+    os.remove(safe)

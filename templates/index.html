@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vfs.css') }}">
     <title>ESC Server</title>
 </head>
 <body>
 
     <script>
-        const API_TOKEN = "{{ api_token }}";
-        const virtual_files = "{{ vfs_files }}";
+        file_path = "{{ file_path }}"
     </script>
-    <script src="{{ url_for('static', filename='js/vfs.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/vfs.js') }}"></script>
 </body>
 </html>
