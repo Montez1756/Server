@@ -18,7 +18,6 @@ def internal_error(error):
 def index():
 
     return render_template("index.html")
-
 @app.route("/download", methods=["POST"])
 def download():
     url = request.get_json().get("url")
@@ -86,5 +85,8 @@ def remove_file():
             log_error(e)
             return jsonify({"msg":str(e)}), 400
         return jsonify({"msg":f"Successfully removed path: {path}"}), 200
+@app.route("/icon/<path:type>", methods=["GET"])
+def icon(type):
+    return send_file(f"./static/icons/{type}.png"), 200
 if __name__ == "__main__":
     app.run("0.0.0.0", 5500, False)

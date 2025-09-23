@@ -29,3 +29,10 @@ body{
     font-size: 1.5vw;
 
 }
+
+#path_list{
+    width: 100vw;
+    height: 100vh;
+    padding: 0.5em;
+    overflow-x: hidden;
+}

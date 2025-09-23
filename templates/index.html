@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/vfs.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
     <title>ESC Server</title>
-</head>
-<body>
-
     <script>
         file_path = "{{ file_path }}"
     </script>
+</head>
+<body>
+    <img src="/icon/file" alt="">
+    <img src="/icon/directory" alt="">
     <script src="{{ url_for('static', filename='js/vfs.js') }}"></script>
 </body>
 </html>
