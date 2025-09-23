@@ -22,6 +22,7 @@ def index():
 @app.route("/download", methods=["POST"])
 def download():
     url = request.get_json().get("url")
+    app.logger.debug(f"Downloading from url -> {url}")
     filename = ""
     try:
         filename = download_url(url)
