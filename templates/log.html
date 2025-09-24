@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Logs</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        (async () => {
+            const req = await fetch("/get-log");
+            if (req.ok) {
+
+                const log_list = await req.json();
+                for (log of log_list) {
+                    const log_p = document.createElement("p");
+                    log_p.textContent = log;
+                    document.body.appendChild(log_p)
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
