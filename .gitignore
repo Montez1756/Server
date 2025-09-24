@@ -1,3 +1,7 @@
 /vfs
 /venv
 *.sh
+cookies.txt
+*.log
+/ytdlp
+/__pycache__
