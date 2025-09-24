@@ -5,7 +5,7 @@ ydl_opts = {
     "outtmpl": "./ytdlp/%(extractor)s_%(id)s.%(ext)s",# save to ./ytdlp/ with video title
     "format": "best/bestvideo+bestaudio",  # best quality video+audio
     "merge_output_format": "mp4",          # merge into mp4 when possible
-    "cookiesfrombrowser":("firefox", "giwim1ap.default"),
+    "cookiefile":"cookies.txt"
 }
 
 def download_url(url):
